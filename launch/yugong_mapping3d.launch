@@ -1,0 +1,21 @@
+<launch>
+  <arg name="robot_name" default="$(env HOSTNAME)"/>
+  <arg name="repo_name" default="yugong"/>
+  <arg name="deploy_dir" default="$(env ROS_HOME)/../yugong_ws/src/$(arg repo_name)/$(arg repo_name)"/>
+  <arg name="package_name" default="cartographer_ros"/>
+
+  <group ns="/$(arg robot_name)">
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find yugong)/configuration_files
+          -configuration_basename mapping3d.lua --log_dir $(arg deploy_dir)/log --minloglevel 0 --max_log_size 100
+	  -start_socket_service false"
+      output="screen">
+
+    <remap from="points2" to="/$(arg robot_name)/velodyne_points" />
+    <remap from="/$(arg robot_name)/get_git_info_srv" to="/$(arg robot_name)/$(arg package_name)/get_git_info_srv"/>
+
+  </node>
+　</group>
+</launch>
