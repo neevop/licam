@@ -43,17 +43,26 @@ options = {
   landmarks_sampling_ratio = 1.,
 }
 
-TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 20
+TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 1
 TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.05
+
+TRAJECTORY_BUILDER_3D.submaps.num_range_data = 120 --400
+TRAJECTORY_BUILDER_3D.ceres_scan_matcher.only_optimize_yaw = false --true
+TRAJECTORY_BUILDER_3D.min_range = 2
+TRAJECTORY_BUILDER_3D.max_range = 150
+
+TRAJECTORY_BUILDER_3D.imu_gravity_time_constant = 10
 
 MAP_BUILDER.use_trajectory_builder_3d = true
 MAP_BUILDER.num_background_threads = 7
 POSE_GRAPH.optimization_problem.huber_scale = 5e2
-POSE_GRAPH.optimize_every_n_nodes = 320
+POSE_GRAPH.optimize_every_n_nodes = 650 --320
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
-POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
-POSE_GRAPH.constraint_builder.min_score = 0.62
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
+POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 20 --10
+POSE_GRAPH.constraint_builder.min_score = 0.3  -- 0.62 
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.2 --0.66
+
+POSE_GRAPH.max_num_final_iterations = 20
 
 POSE_GRAPH.optimization_problem.log_solver_summary = true
 POSE_GRAPH.optimization_problem.use_online_imu_extrinsics_in_3d = true

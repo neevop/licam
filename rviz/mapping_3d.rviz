@@ -28,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: PointCloud2
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -92,7 +92,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: ""
+      Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -101,11 +101,11 @@ Visualization Manager:
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: PointCloud2
-      Position Transformer: ""
+      Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.0199999996
+      Size (m): 0.0399999991
       Style: Flat Squares
       Topic: /scan_matched_points2
       Unreliable: false
@@ -116,7 +116,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -136,21 +136,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -0.970000148
-      Class: rviz/TopDownOrtho
+      Class: rviz/Orbit
+      Distance: 44.5955467
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: 0.667272329
+        Y: -4.93899536
+        Z: 2.70261717
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 11.2336216
+      Pitch: 0.00479736645
       Target Frame: <Fixed Frame>
-      Value: TopDownOrtho (rviz)
-      X: 4
-      Y: 4
+      Value: Orbit (rviz)
+      Yaw: 1.6599834
     Saved: ~
 Window Geometry:
   Displays:
