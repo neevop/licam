@@ -42,6 +42,16 @@
     </visual>
   </link>
 
+  <link name="camera0_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.02 0.01 0.02" />
+      </geometry>
+      <material name="orange" />
+    </visual>
+  </link>
+
   <link name="base_link" />
 
   <joint name="imu_link_joint" type="fixed">
@@ -54,5 +64,11 @@
     <parent link="base_link" />
     <child link="horizontal_velodyne_link" />
     <origin xyz="0.0 0.0 0.234" rpy="0.0 0.0 1.57" />
+  </joint>
+
+  <joint name="camera0_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera0_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0" />
   </joint>
 </robot>

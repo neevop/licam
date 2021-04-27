@@ -12,7 +12,7 @@
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
 
-VOXEL_SIZE = 5e-2
+VOXEL_SIZE = 3e-2
 
 include "transform.lua"
 
