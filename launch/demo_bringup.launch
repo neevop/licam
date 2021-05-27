@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="load_state_filename" default="$(find licam)/map/0519_1.pbstream"/>
+   
+   <include file="$(find licam)/launch/localization_r2000.launch">
+        <arg name="load_state_filename" value="$(arg load_state_filename)"/>
+    </include>
+</launch>

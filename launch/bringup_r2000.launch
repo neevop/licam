@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="load_state_filename" default="$(find licam)/map/0519_1.pbstream" />
+
+    <include file="$(find licam)/launch/r2000.launch" />
+    
+    <include file="$(find licam)/launch/base.launch" />
+
+    <include file="$(find licam)/launch/localization_r2000.launch">
+	<arg name="load_state_filename" value="$(arg load_state_filename)" />
+    </include>
+
+    <include file="$(find licam)/launch/nav_planner.launch" />
+    
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find licam)/rviz/nav_planner.rviz" />
+</launch>
