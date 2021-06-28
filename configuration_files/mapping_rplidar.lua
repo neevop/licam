@@ -51,30 +51,25 @@ TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = false
 TRAJECTORY_BUILDER_2D.use_imu_data = false
 
 TRAJECTORY_BUILDER_2D.min_range = 0.2
-TRAJECTORY_BUILDER_2D.max_range = 100
-TRAJECTORY_BUILDER_2D.adaptive_voxel_filter.max_range = 50
+TRAJECTORY_BUILDER_2D.max_range = 12
+TRAJECTORY_BUILDER_2D.adaptive_voxel_filter.max_range = 30
 
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.occupied_space_weight = 1.0
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10.0
-TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 20.0 -- 5.0
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 5.0
 
-TRAJECTORY_BUILDER_2D.submaps.num_range_data = 30 -- 100
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 50 -- 100
 TRAJECTORY_BUILDER_2D.submaps.grid_options_2d.resolution = 0.05
 
-POSE_GRAPH.matcher_translation_weight = 1e3
+POSE_GRAPH.matcher_translation_weight = 1e5 --1e3
 POSE_GRAPH.matcher_rotation_weight = 1e8
 POSE_GRAPH.global_sampling_ratio = 0.05
 POSE_GRAPH.optimization_problem.ceres_solver_options.num_threads = 4
 
-
-TRAJECTORY_BUILDER.pure_localization_trimmer = {
-  max_submaps_to_keep = 3,
-}
-
 POSE_GRAPH.optimize_every_n_nodes = 10
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.70  -- 0.85
-POSE_GRAPH.constraint_builder.min_score = 0.60  -- 0.75
-POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 1.0 -- 1.0
-POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(15.)
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.65  -- 0.85
+POSE_GRAPH.constraint_builder.min_score = 0.45  -- 0.75
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 1.0
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(30.)
 
 return options

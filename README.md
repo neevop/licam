@@ -29,3 +29,6 @@ sudo apt install libsdl-dev
 sudo apt install libsdl-image1.2-dev 
 sudo apt install ros-noetic-tf2-sensor-msgs 
 sudo apt install ros-noetic-move-base-msgs 
+
+for mqtt bridge
+sudo apt install 

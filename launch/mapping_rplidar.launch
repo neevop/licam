@@ -16,7 +16,7 @@
 
 <launch>
   <param name="robot_description"
-    textfile="$(find licam)/urdf/mapping_2d.urdf" />
+    textfile="$(find licam)/urdf/mapping_rplidar.urdf" />
 
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
@@ -24,7 +24,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find licam)/configuration_files
-          -configuration_basename mapping_2d.lua"
+          -configuration_basename mapping_rplidar.lua"
       output="screen">
     <remap from="scan" to="scan" />
   </node>
